@@ -78,7 +78,7 @@ coun to cn
 *appe blank
 *repl no_faktur with vnofak
 *endfor i
-mxrow=40
+mxrow=45
 
 coun to cnn
 mcnn=mod(cnn,mxrow)
@@ -141,7 +141,7 @@ dele for itno>cnn
 *vbilang=rtrim(bilang1)+' '+bilang2
 *inde on str(hal,1)+str(itno,3) tag urut
 go top
-repo form cfakcet prev nocons
+*repo form cfakcet prev nocons
 *repo form cfakcet to print prompt nocons
-*repo form cfakcet to print
+repo form cfakcet to print
 close data
