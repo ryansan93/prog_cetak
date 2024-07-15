@@ -15,6 +15,7 @@ use csjcetdt
 dele all
 appe from csjcet.TXT deli
 use csjcetdt
+
 go top
 
 vnosj=no_sj

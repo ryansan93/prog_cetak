@@ -16,8 +16,6 @@ dele all
 appe from csjcet.TXT deli
 use csjcetdt
 
-brow
-
 go top
 
 vnosj=no_sj
@@ -130,7 +128,7 @@ dele for itno>cnn
 *vbilang=rtrim(bilang1)+' '+bilang2
 *inde on str(hal,1)+str(itno,3) tag urut
 go top
-repo form csjcet prev nocons
+*repo form csjcet prev nocons
 *repo form csjcet to print prompt nocons
-*repo form csjcet to print
+repo form csjcet to print
 close data
