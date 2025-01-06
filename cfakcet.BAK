@@ -17,6 +17,7 @@ appe from cfakcet.TXT deli
 use cfakcetdt
 *sum jumlah*harga to vtot_dpp
 go top
+vprs_ppn=v_prs_ppn
 *vtot_bruto=tot_bruto
 *vtot_disc=tot_disc
 *vtot_dpp=vtot_bruto-vtot_disc

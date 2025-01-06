@@ -11,31 +11,28 @@ set stat bar off
 set hour to 24
 set confirm on
 SET EXCLU on
-use cfakcetdt
+use crtbelicetdt
 dele all
-appe from cfakcet.TXT deli
-use cfakcetdt
+appe from crtbelicet.TXT deli
+use crtbelicetdt
 *sum jumlah*harga to vtot_dpp
 go top
 vprs_ppn=v_prs_ppn
 *vtot_bruto=tot_bruto
 *vtot_disc=tot_disc
 *vtot_dpp=vtot_bruto-vtot_disc
-*vtot_ppn=tot_ppn
+vtot_ppn=tot_ppn
 *vtot_ppn=vtot_dpp*0.11
 vby_kirim=by_kirim
 *vnil_piut=nil_piut
 *vnil_piut=vtot_dpp+vby_kirim+vtot_ppn
-vnofak=no_faktur
-vuang_muka=uang_muka
-ctgl=tgl_faktur
-ctgl_sj=tgl_sj
-cket_so=ket_so
-cket=keterangan
-cno_sj=no_sj
-ltgl=left(ctgl,4)
-rtgl=substr(ctgl,9,2)
-cmon=val(substr(ctgl,6,2))
+vnoret=no_retur
+vnolpb=no_lpb
+vtglret=tgl_retur
+vnoinv=no_invoice
+ltgl=left(vtglret,4)
+rtgl=substr(vtglret,9,2)
+cmon=val(substr(vtglret,6,2))
 mtgl=''
 if cmon=1
    mtgl='Jan'
@@ -79,7 +76,7 @@ coun to cn
 *appe blank
 *repl no_faktur with vnofak
 *endfor i
-mxrow=45
+mxrow=42
 
 coun to cnn
 mcnn=mod(cnn,mxrow)
@@ -91,19 +88,19 @@ endi
 if mcnn>4
    for i=1 to mxrow-mcnn
       appe blank
-      repl no_faktur with vnofak
+      repl no_retur with vnoret
    endf
 else
    for i=mcnn+1 to mxrow
       appe blank
-      repl no_faktur with vnofak
+      repl no_retur with vnoret
    endf
 endi
 coun to ccc
 if ccc=0
-*if mod(ccc,10)=0
+*if mod(ccc,mxrow)=0
       appe blank
-      repl no_faktur with vnofak
+      repl no_retir with vnoret
 endi
 go top
 hl=1
@@ -111,9 +108,6 @@ it=0
 itt=0
 lhal=0
 do while not eof()
-   *if not empty(nama_nota)
-   *   repl nama_brg with nama_nota
-   *endi
    it=it+1
    itt=itt+1
    if itt>xcnn
@@ -130,8 +124,6 @@ do while not eof()
    skip
 endd
 inde on str(hal,1)+str(itno,2) tag urut
-dele for itno>cnn
-*brow
 *sum nilai to vtotal
 *nilbil=vtotal
 *bilang1=""
@@ -142,7 +134,7 @@ dele for itno>cnn
 *vbilang=rtrim(bilang1)+' '+bilang2
 *inde on str(hal,1)+str(itno,3) tag urut
 go top
-*repo form cfakcet prev nocons
-*repo form cfakcet to print prompt nocons
-repo form cfakcet to print
+*repo form crtbelicet prev nocons
+*repo form crtbelicet to print prompt nocons
+repo form crtbelicet to print
 close data

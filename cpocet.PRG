@@ -16,6 +16,7 @@ dele all
 appe from cpocet.TXT deli
 use cpocetdt
 go top
+vprs_ppn=v_prs_ppn
 vtot_bruto=tot_bruto
 vtot_disc=tot_disc
 vtot_ppn=tot_ppn

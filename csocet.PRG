@@ -16,6 +16,7 @@ dele all
 appe from csocet.TXT deli
 use csocetdt
 go top
+vprs_ppn=v_prs_ppn
 vtot_bruto=tot_bruto
 vtot_ppn=tot_ppn
 vby_kirim=by_kirim
