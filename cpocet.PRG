@@ -80,7 +80,7 @@ endfor i
 *vbilang=rtrim(bilang1)+' '+bilang2
 *inde on str(hal,1)+str(itno,3) tag urut
 go top
-*repo form cpocet prev nocons
+repo form cpocet prev nocons
 *repo form cpocet to print prompt nocons
-repo form cpocet to print
+*repo form cpocet to print
 close data
